@@ -13,15 +13,15 @@ import retrofit2.Response;
 
 public class AlbumRepositoryImpl implements AlbumRepository{
 
-    private ItunesApi itunesApi;
+    private ItunesApi mItunesApi;
 
     @Inject
     AlbumRepositoryImpl(ItunesApi itunesApi){
-        this.itunesApi = itunesApi;
+        this.mItunesApi = itunesApi;
     }
 
     @Override
     public Response<ResponseItunesApi<Album>> getAlbum(String term) throws IOException {
-        return itunesApi.getAlbums(term, "album", "ru").execute();
+        return mItunesApi.getAlbums(term, "album", "ru").execute();
     }
 }

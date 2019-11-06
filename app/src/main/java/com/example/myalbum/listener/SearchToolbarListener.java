@@ -1,6 +1,6 @@
 package com.example.myalbum.listener;
 
-import android.widget.SearchView;
+import androidx.appcompat.widget.SearchView;
 
 public class SearchToolbarListener implements SearchView.OnQueryTextListener{
     @Override
@@ -10,6 +10,6 @@ public class SearchToolbarListener implements SearchView.OnQueryTextListener{
 
     @Override
     public boolean onQueryTextChange(String s) {
-        return false;
+        return true;
     }
 }
