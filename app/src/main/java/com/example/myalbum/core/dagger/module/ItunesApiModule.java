@@ -11,11 +11,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 @Module
 public class ItunesApiModule {
+
     @Provides
     @Singleton
     Retrofit getRetrofit(){
+        String apitunsLink = "https://itunes.apple.com";
         return new Retrofit.Builder()
-                .baseUrl("https://itunes.apple.com")
+                .baseUrl(apitunsLink)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }

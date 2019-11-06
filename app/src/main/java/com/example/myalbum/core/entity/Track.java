@@ -15,46 +15,46 @@ import java.io.Serializable;
 public class Track implements Serializable {
     @SerializedName("trackName")
     @Expose
-    private String trackName;
+    private String mTrackName;
     @SerializedName("trackPrice")
     @Expose
-    private double trackPrice;
+    private double mTrackPrice;
     @SerializedName("previewUrl")
     @Expose
-    private String previewUrl;
+    private String mPreviewUrl;
     @SerializedName("trackTimeMillis")
     @Expose
-    private int trackTimeMillis;
+    private int mTrackTimeMillis;
 
     public String getTrackName() {
-        return trackName;
+        return mTrackName;
     }
 
     public void setTrackName(String trackName) {
-        this.trackName = trackName;
+        mTrackName = trackName;
     }
 
     public double getTrackPrice() {
-        return trackPrice;
+        return mTrackPrice;
     }
 
     public void setTrackPrice(double trackPrice) {
-        this.trackPrice = trackPrice;
+        mTrackPrice = trackPrice;
     }
 
     public String getPreviewUrl() {
-        return previewUrl;
+        return mPreviewUrl;
     }
 
     public void setPreviewUrl(String previewUrl) {
-        this.previewUrl = previewUrl;
+        mPreviewUrl = previewUrl;
     }
 
     public int getTrackTimeMillis() {
-        return trackTimeMillis;
+        return mTrackTimeMillis;
     }
 
     public void setTrackTimeMillis(int trackTimeMillis) {
-        this.trackTimeMillis = trackTimeMillis;
+        mTrackTimeMillis = trackTimeMillis;
     }
 }

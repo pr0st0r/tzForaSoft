@@ -20,101 +20,101 @@ import java.io.Serializable;
 public class Album implements Serializable {
     @SerializedName("collectionId")
     @Expose
-    private long collectionId;
+    private long mCollectionId;
     @SerializedName("artistName")
     @Expose
-    private String artistName;
+    private String mArtistName;
     @SerializedName("collectionName")
     @Expose
-    private String collectionName;
+    private String mCollectionName;
     @SerializedName("collectionPrice")
     @Expose
-    private double collectionPrice;
+    private double mCollectionPrice;
     @SerializedName("trackCount")
     @Expose
-    private int trackCount;
+    private int mTrackCount;
     @SerializedName("currency")
     @Expose
-    private String currency;
+    private String mCurrency;
     @SerializedName("releaseDate")
     @Expose
-    private String releaseDate;
+    private String mReleaseDate;
     @SerializedName("primaryGenreName")
     @Expose
-    private String primaryGenreName;
+    private String mPrimaryGenreName;
     @SerializedName("artworkUrl100")
     @Expose
-    private String cover;
+    private String mCover;
 
     public long getCollectionId() {
-        return collectionId;
+        return mCollectionId;
     }
 
     public void setCollectionId(long collectionId) {
-        this.collectionId = collectionId;
+        mCollectionId = collectionId;
     }
 
     public String getArtistName() {
-        return artistName;
+        return mArtistName;
     }
 
     public void setArtistName(String artistName) {
-        this.artistName = artistName;
+        mArtistName = artistName;
     }
 
     public String getCollectionName() {
-        return collectionName;
+        return mCollectionName;
     }
 
     public void setCollectionName(String collectionName) {
-        this.collectionName = collectionName;
+        mCollectionName = collectionName;
     }
 
     public double getCollectionPrice() {
-        return collectionPrice;
+        return mCollectionPrice;
     }
 
     public void setCollectionPrice(double collectionPrice) {
-        this.collectionPrice = collectionPrice;
+        mCollectionPrice = collectionPrice;
     }
 
     public int getTrackCount() {
-        return trackCount;
+        return mTrackCount;
     }
 
     public void setTrackCount(int trackCount) {
-        this.trackCount = trackCount;
+        mTrackCount = trackCount;
     }
 
     public String getCurrency() {
-        return currency;
+        return mCurrency;
     }
 
     public void setCurrency(String currency) {
-        this.currency = currency;
+        mCurrency = currency;
     }
 
     public String getReleaseDate() {
-        return releaseDate;
+        return mReleaseDate;
     }
 
     public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
+        mReleaseDate = releaseDate;
     }
 
     public String getPrimaryGenreName() {
-        return primaryGenreName;
+        return mPrimaryGenreName;
     }
 
     public void setPrimaryGenreName(String primaryGenreName) {
-        this.primaryGenreName = primaryGenreName;
+        mPrimaryGenreName = primaryGenreName;
     }
 
     public String getCover() {
-        return cover;
+        return mCover;
     }
 
     public void setCover(String cover) {
-        this.cover = cover;
+        mCover = cover;
     }
 }

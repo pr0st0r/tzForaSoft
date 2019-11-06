@@ -15,24 +15,24 @@ import java.util.List;
 public class ResponseItunesApi<T> implements Serializable {
     @SerializedName("resultCount")
     @Expose
-    private int resultCount;
+    private int mResultCount;
     @SerializedName("results")
     @Expose
-    private List<T> results;
+    private List<T> mResults;
 
     public int getResultCount() {
-        return resultCount;
+        return mResultCount;
     }
 
     public void setResultCount(int resultCount) {
-        this.resultCount = resultCount;
+        mResultCount = resultCount;
     }
 
     public List<T> getResults() {
-        return results;
+        return mResults;
     }
 
     public void setResults(List<T> results) {
-        this.results = results;
+        mResults = results;
     }
 }
