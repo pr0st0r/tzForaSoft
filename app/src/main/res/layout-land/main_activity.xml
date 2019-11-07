@@ -17,9 +17,9 @@
         android:layout_gravity="center_horizontal"
         android:padding="10dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="3"
+        app:spanCount="5"
         tools:listitem="@layout/album"
-        tools:itemCount="6">
+        tools:itemCount="10">
     </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>
