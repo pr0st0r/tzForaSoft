@@ -18,7 +18,7 @@ public class AlbumHolder extends RecyclerView.ViewHolder {
         mBinding = DataBindingUtil.bind(itemView);
     }
 
-    public void bind(Album album){
+    public void bind(@NonNull Album album){
         mBinding.setAlbum(album);
         mBinding.executePendingBindings();
     }

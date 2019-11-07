@@ -2,9 +2,7 @@ package com.example.myalbum.listener;
 
 import androidx.appcompat.widget.SearchView;
 
-import com.example.myalbum.ui.MainViewModel;
-
-import java.io.IOException;
+import com.example.myalbum.core.viewmodel.MainViewModel;
 
 
 public class SearchToolbarListener implements SearchView.OnQueryTextListener{
@@ -22,9 +20,9 @@ public class SearchToolbarListener implements SearchView.OnQueryTextListener{
 
     @Override
     public boolean onQueryTextChange(String s) {
-        if(!s.equals("")){
+        if(!s.equals(""))
             mViewModel.loadAlbumList(s);
-        }
+
         return true;
     }
 }

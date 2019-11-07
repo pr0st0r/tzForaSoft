@@ -6,17 +6,13 @@ import android.view.Menu;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myalbum.core.entity.Album;
 import com.example.myalbum.core.rv.adapter.AlbumAdapter;
 import com.example.myalbum.listener.SearchToolbarListener;
-import com.example.myalbum.ui.MainViewModel;
+import com.example.myalbum.core.viewmodel.MainViewModel;
 
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -27,7 +23,7 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        setSupportActionBar(findViewById(R.id.toolbar));
 
         RecyclerView mAlbumList = findViewById(R.id.album_list);
         mAlbumAdapter = new AlbumAdapter();
@@ -35,12 +31,9 @@ public class MainActivity extends AppCompatActivity{
 
         mMainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
 
-        mMainViewModel.getAlbums().observe(this, new Observer<List<Album>>(){
-            @Override
-            public void onChanged(List<Album> albums) {
-                mAlbumAdapter.setAlbumList(albums);
-                mAlbumAdapter.notifyDataSetChanged();
-            }
+        mMainViewModel.getAlbums().observe(this, albums -> {
+            mAlbumAdapter.setAlbumList(albums);
+            mAlbumAdapter.notifyDataSetChanged();
         });
     }
 

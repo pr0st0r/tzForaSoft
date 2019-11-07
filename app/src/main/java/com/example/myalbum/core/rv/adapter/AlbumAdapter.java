@@ -37,7 +37,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumHolder> {
         return mAlbumList != null ? mAlbumList.size() : 0;
     }
 
-    public void setAlbumList(List<Album> albumList) {
+    public void setAlbumList(@NonNull List<Album> albumList) {
         mAlbumList = albumList;
     }
 }

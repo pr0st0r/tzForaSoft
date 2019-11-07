@@ -14,10 +14,10 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="centerCrop"
-        android:background="#fff"
+        android:background="@color/white"
         android:layout_margin="10dp"
         android:src="@{album.cover}"
-        tools:src="@drawable/no_img"
-        android:contentDescription="@string/cover" />
+        android:contentDescription="@string/cover"
+        tools:src="@drawable/no_img" />
 
 </layout>
