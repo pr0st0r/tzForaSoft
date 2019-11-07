@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ImageButton
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/album_cover"
-    android:layout_width="100dp"
-    android:layout_height="100dp"
-    android:scaleType="centerCrop"
-    android:background="#fff"
-    android:layout_margin="10dp"
-    tools:src="@drawable/no_img"
-    android:contentDescription="@string/cover" />
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="album"
+            type="com.example.myalbum.core.entity.Album" />
+    </data>
+
+    <ImageButton
+        android:id="@+id/album_cover"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:background="@color/white"
+        android:layout_margin="10dp"
+        android:src="@{album.cover}"
+        android:contentDescription="@string/cover"
+        tools:src="@drawable/no_img" />
+
+</layout>
