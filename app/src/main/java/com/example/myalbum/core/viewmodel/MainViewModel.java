@@ -1,6 +1,9 @@
 package com.example.myalbum.core.viewmodel;
 
 import android.app.Application;
+import android.content.Context;
+import android.os.Handler;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,6 +26,9 @@ import retrofit2.Response;
 
 public class MainViewModel extends AndroidViewModel {
 
+    private Context mContext;
+    private Handler mHandler;
+
     @Inject
     AlbumRepositoryImpl albumRepository;
 
@@ -30,6 +36,8 @@ public class MainViewModel extends AndroidViewModel {
 
     public MainViewModel(@NonNull Application application) {
         super(application);
+        mContext = application.getBaseContext();
+        mHandler = new Handler(mContext.getMainLooper());
         App.getComponent().inject(this);
     }
 
@@ -42,18 +50,21 @@ public class MainViewModel extends AndroidViewModel {
             try {
                 Response<ResponseItunesApi<Album>> response =  albumRepository.getAlbum(term);
                 if(response.isSuccessful()){
-
                     if(response.body() != null && response.body().getResultCount() > 0){
                         mAlbums.postValue(response.body().getResults());
                     }else{
-                        Toast.makeText(getApplication().getApplicationContext(), R.string.nothing_found, Toast.LENGTH_SHORT).show();
+                        showToastMessage(R.string.nothing_found);
                     }
                 }else {
-                    Toast.makeText(getApplication().getApplicationContext(), R.string.error_search, Toast.LENGTH_SHORT).show();
+                    showToastMessage(R.string.error_search);
                 }
             } catch (IOException e) {
-                Toast.makeText(getApplication(), R.string.connection_error, Toast.LENGTH_SHORT).show();
+                showToastMessage(R.string.connection_error);
             }
         }).start();
+    }
+
+    private void showToastMessage(int msg){
+        mHandler.post(() -> Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show());
     }
 }

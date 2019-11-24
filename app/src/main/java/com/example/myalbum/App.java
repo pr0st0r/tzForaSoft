@@ -7,6 +7,7 @@ import com.example.myalbum.core.dagger.component.DaggerAppComponent;
 
 public class App extends Application {
 
+    public static String ALBUM_TRANSFER = "album transfer";
     private static AppComponent sComponent;
 
     @Override

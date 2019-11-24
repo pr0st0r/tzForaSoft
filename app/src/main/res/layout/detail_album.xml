@@ -81,7 +81,7 @@
                 android:padding="5dp"
                 android:textAlignment="center"
                 android:textColor="#F50000"
-                android:text="@{album.collectionPrice}"
+                app:price="@{album.collectionPrice}"
                 app:layout_constraintEnd_toStartOf="@+id/genre"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detail_cover"
