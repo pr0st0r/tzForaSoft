@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="album"
+            type="com.example.myalbum.core.entity.Album" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".DetailAlbumActivity">
+
+        <include layout="@layout/toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/detail_cover"
+                android:layout_width="146dp"
+                android:layout_height="107dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/cover"
+                android:src="@{album.cover}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/no_img"/>
+
+            <TextView
+                android:id="@+id/title_album"
+                style="@style/album_info"
+                android:layout_marginTop="8dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textStyle="bold|italic"
+                android:text="@{album.collectionName}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/detail_cover"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Название" />
+
+            <TextView
+                android:id="@+id/name_artist"
+                style="@style/album_info"
+                android:layout_width="0dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="8dp"
+                android:background="#E4D876"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:text="@{album.artistName}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/detail_cover"
+                app:layout_constraintTop_toBottomOf="@+id/title_album"
+                tools:text="Артист" />
+
+            <TextView
+                android:id="@+id/genre"
+                style="@style/album_info"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text ="@{album.primaryGenreName}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/detail_cover"
+                app:layout_constraintTop_toBottomOf="@+id/name_artist"
+                tools:text="Жанр"/>
+
+            <TextView
+                android:id="@+id/price"
+                style="@style/album_info"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textColor="#F50000"
+                app:price="@{album.collectionPrice}"
+                app:layout_constraintEnd_toStartOf="@+id/genre"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detail_cover"
+                tools:text="Цена"/>
+
+            <TextView
+                android:id="@+id/date"
+                style="@style/album_info"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                app:date="@{album.releaseDate}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/price"
+                app:layout_constraintTop_toBottomOf="@+id/genre"
+                tools:text="Дата"/>
+
+            <TextView
+                android:id="@+id/track"
+                style="@style/album_info"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="@string/tracks"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date" />
+
+            <ListView
+                android:id="@+id/track_list"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/track"
+                tools:listitem="@layout/track" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<data>
+    <variable
+        name="track"
+        type="com.example.myalbum.core.entity.Track" />
+</data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_track"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            android:paddingBottom="5dp"
+            android:text="@{track.trackName}"
+            tools:text="Название трека" />
+
+        <TextView
+            android:id="@+id/track_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:duration="@{track.trackTimeMillis}"
+            tools:text="Продолжительность: 3:05" />
+    </LinearLayout>
+
+</layout>
