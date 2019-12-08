@@ -39,4 +39,13 @@ public class AlbumListAdapter {
             if (matcher.find())
                 textView.setText(date.substring(matcher.start(), matcher.end()));
     }
+
+    @BindingAdapter("app:duration")
+    public static void loadTimeTrack(TextView textView, int timeMillis){
+        int minut = timeMillis / 1000 / 60;
+        int second = timeMillis / 1000 - minut * 60;
+        String resultSecond = second < 10 ? "0" + second : Integer.toString(second);
+
+       textView.setText("Продолжительность: " + minut + ":" + resultSecond);
+    }
 }
